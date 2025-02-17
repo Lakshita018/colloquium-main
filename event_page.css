@@ -1,0 +1,320 @@
+
+.main {
+    height: 80vh;
+}
+
+#wit-wars,#flag-heist,#overthrone,#web-vida{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+/* #overthrone{
+    background-image: url("images/wp11778457-viking-desktop-hd-wallpapers.jpg");
+}
+#wit-wars{
+    background-image: url("images/Squid-game\ 1.jpg");
+}
+#flag-heist{
+    background-image: url("images/1072652.jpg");
+}
+#web-vida{
+    background-image: url("breakingbad.jpg");
+} */
+
+.container {
+    height: auto;
+    width: 50%;
+    /* max-width: 600px; */
+    display: flex;
+    padding: 0 0 0 30px;
+    /* backdrop-filter: brightness(0.4); */
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+}
+
+.intro h1 strong {
+    font-size: 3rem;
+    color: #E50914;
+}
+
+.intro h2 strong {
+    color: #E50914;
+    font-size: 2rem;
+}
+
+.intro .about-event {
+    font-size: 0.9rem;
+    font-weight: 100;
+}
+
+.intro .date span {
+    color: #E50914;
+    font-weight: 900;
+}
+
+.resume-button {
+    width: 6rem;
+    background-color: #E50914;
+    background-color: #B20710;
+    background-color: #c90912;
+    color: white;
+    padding: 0.2rem 1.2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    gap: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.resume-button img {
+    width: 1.5rem;
+    height: 2rem;
+}
+
+.resume-button:hover {
+    background-color: #c90912;
+    background-color: #E50914;
+}
+
+.resume-button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (min-width:1024px) {
+    .main {
+        height: 90vh;
+    }
+
+    .container {
+        padding: 0 0 0 5rem;
+    }
+}
+
+@media (min-width: 875px) {
+
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        margin-left: 30px;
+    }
+
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu li {
+        padding: 0;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        height: 55vh;
+    }
+
+    .container {
+        padding: 0 0 0 4rem;
+        gap: 10px;
+    }
+
+    .rules-section {
+        margin: 7rem 0 !important;
+    }
+
+    .intro h1 strong {
+        font-size: 2rem;
+    }
+
+    .intro h1 {
+        font-size: 1.25rem;
+    }
+
+    .intro h2 strong {
+        font-size: 1.75rem;
+    }
+
+    .intro h2 {
+        font-size: 1rem;
+    }
+
+    .intro .date {
+        font-size: 0.9rem;
+    }
+
+    .intro .about-event {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width:660px) {
+    .container {
+        padding: 0 0 0 3.5rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .container {
+        padding: 0 2rem 0 2rem;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .container h1{
+        text-align: center;
+    }
+    .container .date{
+        text-align: center;
+    }
+    .container img{
+        margin: auto;
+    }
+    .container .resume-button{
+        display: block;
+        margin: 0 auto;
+        width: 6rem;
+    }
+      
+
+    .intro .register button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+        align-items: center;
+    }
+}
+
+/* Rules Section
+.rules-section {
+    margin: 10rem 0;
+    width: 100%;
+    backdrop-filter: blur(1.5px);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 0;
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.2);
+} */
+
+.rules-book {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 14px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* .rules-img {
+    width: 100%;
+} */
+
+/* .rules-img img {
+    border-radius: 7px;
+    height: 100%;
+    width: 100%;
+} */
+
+.rules-header h2 {
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    font-weight: 700;
+    font-family: Montserrat, helvetica, arial, sans-serif;
+    color: white;
+    border-bottom: 3px solid #B20710;
+    font-size: 2rem;
+}
+
+.rules-content {
+    position: relative;
+    font-size: 0.9rem;
+    font-weight: 100;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    overflow: hidden;
+}
+
+.rules h3 {
+    font-family: Montserrat, helvetica, arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #E50914;
+    margin-bottom: 0.5rem;
+}
+
+.rules p {
+    width: 100%;
+}
+
+.rules-book {
+    position: relative;
+    padding: 30px;
+    /* border-radius: 15px; */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    max-width: 50%;
+    color: #fff;
+}
+
+/* Responsive Design for Rules Section */
+@media (max-width: 768px) {
+    .rules-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .rules-content {
+        font-size: 0.85rem;
+    }
+
+    .rules h3 {
+        font-size: 1rem;
+    }
+
+    .rules-book {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .rules-book {
+        /* margin: auto; */
+        display: inline;
+        /* width: 100%; */
+        padding: 15px;
+
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .rules-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .rules-content {
+        font-size: 0.8rem;
+    }
+
+    .rules h3 {
+        font-size: 0.9rem;
+    }
+}

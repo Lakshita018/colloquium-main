@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+    
+</head>
+
+<body>
+    <header>
+        <div class="header">
+                <a class="logo" href=".page-top"><img src="images/ISTE Thapar Chapter Logo white.png" alt="ISTE LOGO"></a>
+            
+                
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                    <li><a href="#" class="link link-theme">HOME</a></li>
+                    <li><a href="#wrapper" class="link link-theme">EVENTS</a></li>
+                    <li><a href="#sponsers" class="link link-theme">SPONSORS</a></li>
+                    <li><a href="#our-team" class="link link-theme">OUR TEAM</a></li>
+                    <li><a href="#footer" class="link link-theme">CONTACT</a></li>
+                    <li>
+                        <a class="resume-button" href="register.html" id="nav-button1">
+                            Register
+                        </a>
+                    </li>
+                </ul>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- <img src="images/IMG_9204.JPG"
+            alt="ISTE Colloquium Group" class="hero-image" /> -->
+
+        <div class="content">
+            <img src="images/logo.png "
+            alt="Colloquium" class="hero-image" />
+           
+            <a class="resume-button" href="register.html">
+                <img src="images/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Resume Icon"> Register
+            </a>
+
+            <div class="countdown">
+                <div class="countdown-group">
+                    <div class="countdown-digits">
+                        <div class="digit" id="days">00</div>
+                    </div>
+                    <div class="countdown-label">DAYS</div>
+                </div>
+            
+                <div class="countdown-group">
+                    <div class="countdown-digits">
+                        <div class="digit" id="hours">00</div>
+                    </div>
+                    <div class="countdown-label">HOURS</div>
+                </div>
+            
+                <div class="countdown-group">
+                    <div class="countdown-digits">
+                        <div class="digit" id="minutes">00</div>
+                    </div>
+                    <div class="countdown-label">MINUTES</div>
+                </div>
+            
+                <div class="countdown-group">
+                    <div class="countdown-digits">
+                        <div class="digit" id="seconds">00</div>
+                    </div>
+                    <div class="countdown-label">SECONDS</div>
+                </div>
+            </div>
+            
+            <script>
+                function startCountdown(targetDate) {
+                    function updateTimer() {
+                        const now = new Date().getTime();
+                        const distance = targetDate - now;
+            
+                        if (distance < 0) {
+                            document.querySelector(".countdown").innerHTML = "Countdown Expired";
+                            return;
+                        }
+            
+                        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+                        document.getElementById("days").innerText = days.toString().padStart(2, '0');
+                        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+                        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+                        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+                    }
+            
+                    updateTimer();
+                    setInterval(updateTimer, 1000);
+                }
+            
+                const targetDate = new Date("2025-02-17T00:00:00").getTime();
+                startCountdown(targetDate);
+            </script>
+
+           
+        </div>
+    </div>
+
+    <div id="wrapper">
+        <h1>EVENTS</h1>
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angle-left"></i>
+            <ul class="carousel">
+                <li class="card">
+                    <a class="card-inner" href="web-vida.html">
+                        <img src="images/WEBVIDA.png" alt="">
+                        <div class="card-front">
+                            <div class="card-header">
+                                <div id="XI">XI</div>
+                                <div id="Day">DAY-1</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title">Web Vida</div>
+                                <span class="card-date">17 FEB</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p class="event-description">CODE.CREATE.CONQUER.</p>
+                        </div>
+                    </a>
+                </li>
+
+                
+                <li class="card">
+                    <a class="card-inner" href="overthrone.html" >
+                        <img src="images/OVERTHRONE.png"  alt="">
+                        <div class="card-front">
+                            <div class="card-header">
+                                <div id="XI">XI</div>
+                                <div id="Day">DAY-2</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title">Overthrone</div>
+                                <span class="card-date">18 FEB</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p class="event-description">THE SAGA OF ASCENSION</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="card">
+                    <a class="card-inner" href="wit-wars.html" >
+                        <img src="images/WITWARS.png" alt="">
+                        <div class="card-front">
+                            <div class="card-header">
+                                <div id="XI">XI</div>
+                                <div id="Day">DAY-3</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title">Wit Wars</div>
+                                <span class="card-date">19 FEB</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p class="event-description">VALOR OF THE WISE</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="card">
+                    <a class="card-inner" href="flag-heist.html" >
+                        <img src="images/FLAGHEIST.png" alt="">
+                        <div class="card-front">
+                            <div class="card-header">
+                                <div id="XI">XI</div>
+                                <div id="Day">DAY-4</div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-title">Flag Heist</div>
+                                <span class="card-date">21 FEB</span>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <p class="event-description">INFILTRATE THE CRYPTIC VAULT</p>
+                        </div>
+                    </a>
+                </li>
+               
+            </ul>
+            <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
+    <div id="sponsers">
+        <div class="container">
+            <h1 class="title">OUR SPONSORS</h1>
+            <div class="sponsors-grid">
+                <div class="sponsor">
+                    <img src="images/bm.jpg" alt="Sponsor 1 Logo" class="sponsor-logo">
+                    <p class="description">Title Sponsor</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/ai.png" alt="Sponsor 2 Logo" class="sponsor-logo">
+                    <p class="description">AI Partner</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/mentor.jpeg" alt="Sponsor 3 Logo" class="sponsor-logo">
+                    <p class="description">Our mentoring Partner</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/logo-4.jpg" alt="Sponsor 4 Logo" class="sponsor-logo">
+                    <p class="description">AI Image Sponsor</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/logo-5.jpg" alt="Sponsor 5 Logo" class="sponsor-logo">
+                    <p class="description">Stock Learning Partner</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/logo-6.jpg" alt="Sponsor 6 Logo" class="sponsor-logo">
+                    <p class="description">Domain Sponsor</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/logo-7.jpg" alt="Sponsor 7 Logo" class="sponsor-logo">
+                    <p class="description">Interview Sponsor</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/cake.png" alt="Sponsor Logo" class="sponsor-logo">
+                    <p class="description">Cake Partner</p>
+                </div>
+                <div class="sponsor">
+                    <img src="images/oatley.jpg" alt="Sponsor 7 Logo" class="sponsor-logo">
+                    <p class="description">Health and Sustainability Partner</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="our-team">
+        <h1>Our Team</h1>
+
+        <div class="slider-container">
+            <button class="arrow arrow-left">&#10094;</button>
+            <div class="oc">
+                <div class="grid">
+                    <div class="image">
+                        <img src="images/ishaan.png" alt="Ishaan Sharma" />
+                    </div>
+                    <div class="name">
+                        <p>Ishaan Sharma</p>
+                        <p>OEC</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="image">
+                        <img src="images/ishita.jpg" alt="Ishita Oberoi" />
+                    </div>
+                    <div class="name">
+                        <p>Ishita Oberoi</p>
+                        <p>OEC</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="image">
+                        <img src="images/kaushik.png" alt="Kaushik Arora" />
+                    </div>
+                    <div class="name">
+                        <p>Kaushik Arora</p>
+                        <p>EM & Marketing Head</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="image">
+                        <img src="images/haryiank.png" alt="Haryiank Kumra" />
+                    </div>
+                    <div class="name">
+                        <p>Haryiank Kumar</p>
+                        <p>EM Head</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="image">
+                        <img src="images/sakshat.png" alt="Sakshat Jain" />
+                    </div>
+                    <div class="name">
+                        <p>Sakshat Jain</p>
+                        <p>EM Head</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="image">
+                        <img src="images/bhavya.jpeg" alt="Bhavya" />
+                    </div>
+                    <div class="name">
+                        <p>Bhavya</p>
+                        <p>Documentation Head</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="image">
+                        <img src="images/vaaris.png" alt="Vaaris Sidhu" />
+                    </div>
+                    <div class="name">
+                        <p>Vaaris Sidhu</p>
+                        <p>Documentation Head</p>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="image"><img src="images/lakshita.png" alt="Lakshita Gupta"></div>
+                    <div class="name">
+                        <p class="person-name">Lakshita Gupta</p>
+                        <p class="person-role">Technical Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/garv.jpg" alt="Garv Chopra"></div>
+                    <div class="name">
+                        <p class="person-name">Garv Chopra</p>
+                        <p class="person-role">Technical Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/Ishan.jpg" alt="Ishaan Pathak"></div>
+                    <div class="name">
+                        <p class="person-name">Ishaan Pathak</p>
+                        <p class="person-role">Technical Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/janya.jpeg" alt="Janya Makhija"></div>
+                    <div class="name">
+                        <p class="person-name">Janya Makhija</p>
+                        <p class="person-role">Marketing Head</p>
+                    </div>
+                </div>
+
+               
+
+                <div class="grid">
+                    <div class="image"><img src="images/ayush.png" alt="Ayush Garg"></div>
+                    <div class="name">
+                        <p class="person-name">Ayush Garg</p>
+                        <p class="person-role">Design Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/bhavika.png" alt="Bhavika"></div>
+                    <div class="name">
+                        <p class="person-name">Bhavika</p>
+                        <p class="person-role">Design Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/kashvi.png" alt="Kashvi"></div>
+                    <div class="name">
+                        <p class="person-name">Kashvi Sharma</p>
+                        <p class="person-role">Content Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/saarthi.png" alt="Saarthi Arora"></div>
+                    <div class="name">
+                        <p class="person-name">Saarthi Arora</p>
+                        <p class="person-role">Content Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/paras.png" alt="Paras Dhawan"></div>
+                    <div class="name">
+                        <p class="person-name">Paras Dhawan</p>
+                        <p class="person-role">Media Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/rishabh.png" alt="Rishabh"></div>
+                    <div class="name">
+                        <p class="person-name">Rishabh Garg</p>
+                        <p class="person-role">Media Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/abhinivesh.png" alt="Abhinivesh Sharma"></div>
+                    <div class="name">
+                        <p class="person-name">Abhinivesh Sharma</p>
+                        <p class="person-role">Publicity Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/sneha.png" alt="Sneha"></div>
+                    <div class="name">
+                        <p class="person-name">Sneha</p>
+                        <p class="person-role">Publicity Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/yashita.png" alt="Yashita Gupta"></div>
+                    <div class="name">
+                        <p class="person-name">Yashita Gupta</p>
+                        <p class="person-role">Creativity Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/diya.jpg" alt="Diya"></div>
+                    <div class="name">
+                        <p class="person-name">Diya</p>
+                        <p class="person-role">Creativity Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/TANISHQ.jpg" alt="Tanishq Soni"></div>
+                    <div class="name">
+                        <p class="person-name">Tanishq Soni</p>
+                        <p class="person-role">Logistics Head</p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="image"><img src="images/DIXANT.jpg" alt="Dixant"></div>
+                    <div class="name">
+                        <p class="person-name">Dixant</p>
+                        <p class="person-role">Logistics Head</p>
+                    </div>
+                </div>
+
+            </div>
+            <button class="arrow arrow-right">&#10095;</button>
+        </div>
+    </div>
+
+    
+    
+      
+    
+    <div class="footer-basic" id="footer" >
+        <footer>
+            <div class="contact">
+                <h4>CONTACT:</h4>
+            </div>
+            <div class="social">
+                <a href="https://www.instagram.com/iste_tiet/"><i class="icon ion-social-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/iste-thapar/posts/?feedView=all"><i
+                        class="icon ion-social-linkedin"></i></a>
+                <a href="https://www.facebook.com/ISTE.Thapar/"><i class="icon ion-social-facebook"></i></a>
+            </div>
+
+            <p>©COLLOQUIUM 2025 ALL RIGHTS RESERVED | Designed With ❤️ by <span>Team ISTE</span></p>
+        </footer>
+    </div>
+
+
+    <div class="particles"></div>
+    <div class="star-background"></div>
+
+    <script>
+        // background
+        const particleContainer = document.querySelector('.particles');
+        const starBackground = document.querySelector('.star-background');
+
+        for (let i = 0; i < 100; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animationDelay = `${Math.random() * 10}s`;
+            particleContainer.appendChild(particle);
+        }
+
+        for (let i = 0; i < 300; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            starBackground.appendChild(star);
+        }
+
+        // event carousel 
+        const wrapper = document.querySelector(".wrapper");
+        const carousel = document.querySelector(".carousel");
+        const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+        const arrowBtns = document.querySelectorAll(".wrapper i");
+        const carouselChildrens = [...carousel.children];
+
+        let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
+
+        let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+        carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+            carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+        });
+
+        carouselChildrens.slice(0, cardPerView).forEach(card => {
+            carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+        });
+
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+
+        arrowBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
+            });
+        });
+
+        const dragStart = (e) => {
+            isDragging = true;
+            carousel.classList.add("dragging");
+            startX = e.pageX;
+            startScrollLeft = carousel.scrollLeft;
+        };
+
+        const dragging = (e) => {
+            if (!isDragging) return;
+            carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+        };
+
+        const dragStop = () => {
+            isDragging = false;
+            carousel.classList.remove("dragging");
+        };
+
+        const infiniteScroll = () => {
+            if (carousel.scrollLeft === 0) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+                carousel.classList.remove("no-transition");
+            } else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.offsetWidth;
+                carousel.classList.remove("no-transition");
+            }
+            clearTimeout(timeoutId);
+            if (!wrapper.matches(":hover")) autoPlay();
+        };
+
+        const autoPlay = () => {
+            if (window.innerWidth < 200 || !isAutoPlay) return;
+            timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 5000);
+        };
+
+        autoPlay();
+
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("mousemove", dragging);
+        document.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("scroll", infiniteScroll);
+        wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+        wrapper.addEventListener("mouseleave", autoPlay);
+
+        // our team
+        const teamCarousel = document.querySelector('.oc');
+        const leftArrow = document.querySelector('.arrow-left');
+        const rightArrow = document.querySelector('.arrow-right');
+        const cardWidth = 250;
+        const gap = 30;
+        const scrollAmount = cardWidth + gap;
+        let autoScroll;
+
+        function scrollCarousel(direction) {
+            if (direction === 'right') {
+                teamCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                setTimeout(() => {
+                    if (teamCarousel.scrollLeft + teamCarousel.clientWidth >= teamCarousel.scrollWidth) {
+                        teamCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    }
+                }, 1000);
+            } else {
+                teamCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        leftArrow.addEventListener('click', () => scrollCarousel('left'));
+        rightArrow.addEventListener('click', () => scrollCarousel('right'));
+
+        function startAutoScroll() {
+            autoScroll = setInterval(() => {
+                scrollCarousel('right');
+            }, 5000);
+        }
+
+        teamCarousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+        teamCarousel.addEventListener('mouseleave', startAutoScroll);
+
+        startAutoScroll();
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>

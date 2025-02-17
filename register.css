@@ -1,0 +1,211 @@
+body {
+    background: url('https://assets.nflxext.com/ffe/siteui/vlv3/638e9299-0637-42d1-ba39-54ade4cf2bf6/web/IN-en-20250203-TRIFECTA-perspective_46eb8857-face-4ea6-b901-dbf22b461369_large.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-box {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-decoration: underline ;
+}
+
+.red {
+    color: #E50914;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.asterisk {
+    color: #E50914;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background: #E50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 15px;
+}
+
+.register-btn:hover {
+    background: rgb(128, 2, 2);
+}
+
+/* Dropdown Checkbox */
+.dropdown-checkbox {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Dropdown Header */
+.dropdown-header {
+    background: #fff;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    width: 96%;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    z-index: 10;
+}
+
+/* Show dropdown when active */
+.dropdown-checkbox.active .dropdown-content {
+    display: block;
+}
+
+/* Ensure checkboxes and text are in a single line */
+.dropdown-content label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between checkbox and text */
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+    font-size: 15px;
+    padding: 5px 0px;
+    /* Adds vertical spacing */
+}
+
+/* Checkbox styling */
+.dropdown-content input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+/* Selected event display */
+.event-display {
+    background: #fff;
+    color: black;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    min-height: 30px;
+}
+
+
+
+
+/* Apply red border when checkbox is checked */
+.dropdown-content label:has(input[type="checkbox"]:checked) {
+    border: 1px solid #E50914;
+    padding: 3px;
+    /* Ensures spacing inside the border */
+    border-radius: 5px;
+    /* Optional: Adds rounded corners */
+    box-shadow: 0 0 5px #E50914;
+}
+
+
+
+/* Smooth transition for all elements */
+* {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Fields - Subtle Glow on Focus */
+input:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+    transform: scale(1.02);
+}
+
+/* Register Button - Zoom & Glow Effect on Hover */
+.register-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Dropdown Header - Hover Effect */
+.dropdown-header:hover {
+    background: #E50914;
+    color: white;
+    transform: scale(1.03);
+}
+
+
+/* Checkbox Label - Zoom and Glow on Hover */
+.dropdown-content label:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+    border-radius: 5px;
+}
+
+/* Apply Red Border & Glow when Checkbox is Checked */
+.dropdown-content label:has(input[type="checkbox"]:checked) {
+    border: 1px solid #E50914;
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #E50914;
+    transform: scale(1.02);
+}

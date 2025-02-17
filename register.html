@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colloquium Registration</title>
+    <link rel="stylesheet" href="register.css">
+
+    <script type="module">
+        // Import Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    
+        // Your Firebase configuration (Replace with your actual config)
+        const firebaseConfig = {
+            apiKey: "AIzaSyA1Id3DeQyifRhIZeZlwLQTto7_n5JEHi0",
+            authDomain: "iste-website-742ec.firebaseapp.com",
+            projectId: "iste-website-742ec",
+            storageBucket: "iste-website-742ec.firebasestorage.app",
+            messagingSenderId: "970448771792",
+            appId: "1:970448771792:web:f2e67fa05a164a2abedcd5",
+            measurementId: "G-EDFZ8XE5F5",
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+    
+        // Form submission event
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+    
+            // Get selected events
+            let selectedEvents = Array.from(document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked'))
+                .map(c => c.value);
+    
+            let teamSize = document.getElementById("team-size").value;
+            let members = [];
+    
+            // Collect team members' details
+            for (let i = 1; i <= teamSize; i++) {
+                let member = {
+                    name: document.querySelector(`input[placeholder="Enter Member-${i} Full Name"]`).value,
+                    email: document.querySelector(`input[placeholder="Enter Member-${i} Email"]`).value,
+                    rollNumber: document.querySelector(`input[placeholder="Enter Member-${i} Roll Number"]`).value,
+                    mobile: document.querySelector(`input[placeholder="Enter Member-${i} Mobile Number"]`).value
+                };
+                members.push(member);
+            }
+    
+            // Push data to Firebase Realtime Database
+            const newRegRef = push(ref(database, "registrations"));
+            set(newRegRef, {
+                selectedEvents,
+                teamSize,
+                members,
+                timestamp: new Date().toISOString()
+            }).then(() => {
+        alert("Registration successful!");
+        window.location.href = "index.html"; // Redirect to home page
+    }).catch((error) => {
+        console.error("Error saving data: ", error);
+        alert("Error registering. Try again.");
+    });
+});
+    </script>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1 class="title"><span class="red">R</span>egister</h1>
+            <form>
+                <label for="event-selection">Select Events<span class="asterisk">*</span></label>
+                <div class="dropdown-checkbox" id="dropdown">
+                    <div class="dropdown-header" id="dropdown-btn">Select Events</div>
+                    <div class="dropdown-content">
+                        <label><input type="checkbox" value="Web Vida"> Web Vida</label>
+                        <label><input type="checkbox" value="Wit Wars"> Wit Wars</label>
+                        <label><input type="checkbox" value="Overthrone"> Overthrone</label>
+                        <label><input type="checkbox" value="Flag Heist"> Flag Heist</label>
+                    </div>
+                    <div id="event-selection-display" class="event-display">None Selected</div>
+                </div>
+
+                <label for="team-size">Number of Team Members<span class="asterisk">*</span></label>
+                <select id="team-size" required>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <div id="team-details"></div>
+
+                <button type="submit" class="register-btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>document.getElementById('dropdown-btn').addEventListener('click', function () {
+            document.getElementById('dropdown').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function (event) {
+            let dropdown = document.getElementById('dropdown');
+            if (!dropdown.contains(event.target) && event.target.id !== 'dropdown-btn') {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        let checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
+        let display = document.getElementById('event-selection-display');
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                let selectedEvents = Array.from(checkboxes)
+                    .filter(c => c.checked)
+                    .map(c => c.value);
+                display.innerText = selectedEvents.length ? selectedEvents.join(', ') : 'None Selected';
+            });
+        });
+
+        function generateTeamFields(size) {
+            let container = document.getElementById('team-details');
+            container.innerHTML = ''; // Clear previous fields
+
+            for (let i = 1; i <= size; i++) {
+                let memberFields = `
+            <div class="member">
+                <label>Member-${i} Full Name <span class="asterisk">*</span></label>
+                <input type="text" placeholder="Enter Member-${i} Full Name" required>
+                
+                <label>Member-${i} Email <span class="asterisk">*</span></label>
+                <input type="email" placeholder="Enter Member-${i} Email" required>
+                
+                <label>Member-${i} Roll Number <span class="asterisk">*</span></label>
+                <input type="text" placeholder="Enter Member-${i} Roll Number" required>
+                
+                <label>Member-${i} Mobile Number <span class="asterisk">*</span></label>
+                <input type="tel" placeholder="Enter Member-${i} Mobile Number" required>
+            </div>
+        `;
+                container.innerHTML += memberFields;
+            }
+        }
+
+
+        document.getElementById('team-size').addEventListener('change', function () {
+            generateTeamFields(parseInt(this.value));
+        });
+
+        window.onload = function () {
+            generateTeamFields(2);
+        };</script>
+        <!-- <script type="module">
+            // Import Firebase SDK
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+            import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyA1Id3DeQyifRhIZeZlwLQTto7_n5JEHi0",
+                authDomain: "iste-website-742ec.firebaseapp.com",
+                projectId: "iste-website-742ec",
+                storageBucket: "iste-website-742ec.firebasestorage.app",
+                messagingSenderId: "970448771792",
+                appId: "1:970448771792:web:f2e67fa05a164a2abedcd5",
+                measurementId: "G-EDFZ8XE5F5",
+            };
+        
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+        
+            // Form submission handler
+            document.querySelector("form").addEventListener("submit", async function (event) {
+                event.preventDefault();
+        
+                let selectedEvents = Array.from(document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked'))
+                    .map(c => c.value);
+                let teamSize = document.getElementById("team-size").value;
+                let members = [];
+        
+                for (let i = 1; i <= teamSize; i++) {
+                    let member = {
+                        name: document.querySelector(`input[placeholder="Enter Member-${i} Full Name"]`).value,
+                        email: document.querySelector(`input[placeholder="Enter Member-${i} Email"]`).value,
+                        rollNumber: document.querySelector(`input[placeholder="Enter Member-${i} Roll Number"]`).value,
+                        mobile: document.querySelector(`input[placeholder="Enter Member-${i} Mobile Number"]`).value
+                    };
+                    members.push(member);
+                }
+        
+                try {
+                    await addDoc(collection(db, "registrations"), {
+                        selectedEvents,
+                        teamSize,
+                        members,
+                        timestamp: new Date()
+                    });
+                    alert("Registration successful!");
+                } catch (error) {
+                    console.error("Error saving data: ", error);
+                    alert("Error registering. Try again.");
+                }
+            });
+        </script>
+         -->
+</body>
+
+</html>
